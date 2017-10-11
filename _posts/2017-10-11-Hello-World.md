@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A short welcome and what to expect
+title: Hello World
 ---
 
 In this blog I will mainly write about my struggles computational biology. In my case that includes the analysis of **high-throughput sequencing** data, **phylogenetics** and **phylogenetic comparative methods**. 
