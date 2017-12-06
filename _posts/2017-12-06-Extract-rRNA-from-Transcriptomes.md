@@ -61,7 +61,7 @@ This is again blast tabular output with added a seperate column with lineage inf
 
 Several steps of this workflow can be improved and/or combined. For example one could use AWK to extract the first column of the GFF3 output file to directly select sequences from the assembly. I just like to keep different steps seperate to keep analyses steps more modular. 
 Another possible improvement would be to use GNU [parallel](https://www.gnu.org/software/parallel/) with blast to speed up the blasting procedure. I actually did this for my analysis, but for this post I wanted to keep it simple.
-Finally, I have also created a simple shell script which summarizes all the above commands to extract bacterial, archaeal and eukaryotic rRNA in one go. You can get it [here](https://github.com/reslp/blog/supplements/extract_rrna.sh).
+Finally, I have also created a simple shell script which summarizes all the above commands to extract bacterial, archaeal and eukaryotic rRNA in one go. You can get it [here](https://github.com/reslp/genomics/blob/master/extract_rrna.sh).
 
 Hope this is useful for someone ;)
 
