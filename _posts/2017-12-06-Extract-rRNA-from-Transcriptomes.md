@@ -26,7 +26,7 @@ Here is how to do all this:
 
 ![RNAhmmer](https://github.com/reslp/blog/raw/master/images/rnammer-output.png)
 
-5. I created an intermediate file with the sequence IDs in FASTA format derived from the GFF file created in the previous step. This is because I have a python script ready which selects only specific sequences based on their names, which we will be using in the next step. 
+5. I created an intermediate file with rRNA sequence IDs in FASTA format derived from the GFF file created in the previous step. This is because I have a python script ready which selects only specific sequences based on their names, which we will be using in the next step. But first we select the names:
 ```
 cat Trinity.fasta.rnammer.gff | awk 'BEGIN { FS="\t" } {print ">"$1}' | uniq > rRNA_transcript_ids.txt
 ```
@@ -34,9 +34,9 @@ cat Trinity.fasta.rnammer.gff | awk 'BEGIN { FS="\t" } {print ">"$1}' | uniq > r
 6. The script I will be using is called `select_transcripts.py` and you can get it from my [Github](https://github.com/reslp/genomics) genomics repository. It is executed like this: 
 ```
 select_transcripts.py Trinity.fasta rRNA_transcript_ids.txt normal > rRNA_transcripts.fasta
-``
+```
 
-7. We can now blastn the selected sequences to get the lineage information of the closest hit from the NCBI database. I created a local copy of the nt database on your server, however it is also possible to blast the sequences remotely.
+7. We can now blastn the selected sequences to get the lineage information of the closest hit for each query sequence from the NCBI database. I used a local copy of the nt database on your local server, however it is also possible to blast the sequences remotely.
 
 ```
 blastn -db nt -query rRNA_transcripts.fasta -out taxids.txt -outfmt "6 qseqid staxids sseqid pident qlen length mismatch gapope evalue bitscore" -max_target_seqs 1
@@ -44,7 +44,7 @@ blastn -db nt -query rRNA_transcripts.fasta -out taxids.txt -outfmt "6 qseqid st
 
 *Note: You can use the `-remote` flag to blast against the online version NCBI database directly, however you will nead a blast version >2.6 for this to work.*
 
-I used tabular output format and I only keep the best hit. Keeping only single hits can be problematic, especially when a sequence has hits in multiple unrelated taxa. It would also be possible (and probably a better idea to load blast results into MEGAN and create some kind of consensus taxonomic assignment). In my case I was interested to assign rRNA to either bacteria, archaea or eukarya. Therefore I decided a single hit should be fine.
+The output format used here is the tabular format and I only keep the best hit. It shoudl be noted however that keeping only single hits can be problematic, especially when a sequence has hits in multiple unrelated taxa. It would also be possible (and probably a better idea to load blast results into MEGAN and create some kind of consensus taxonomic assignment). In my case I was interested to assign rRNA to either bacteria, archaea or eukarya. Therefore I decided a single hit should be fine.
 
 8. Blast returns taxonids which can be associated with the lineage information contained in the NCBI databases. I have created a small R script using the taxize package to retrieve this information. It is calles `retrieve_lineage_from_taxid.R`and you can get it from my genomics [GitHub](https://github.com/reslp/genomics) repository. You can use it like this: 
 
