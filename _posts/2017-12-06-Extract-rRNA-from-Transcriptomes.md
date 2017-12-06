@@ -54,7 +54,7 @@ retrieve_lineage_from_taxid.R taxids.txt > taxid_and_lineage_info.txt
 The output may look something like this:
 ![RNAhmmer](https://github.com/reslp/blog/raw/master/images/final_output_rrna.png)
 
-This is again blast tabular output with added a seperate column with lineage information.
+This is again blast tabular output with an additional column with lineage information.
 
 
 # Final remarks
