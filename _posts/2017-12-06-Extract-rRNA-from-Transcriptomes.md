@@ -1,8 +1,8 @@
 ---
 layout: post
-title: How-to extract rRNA from assembled transcriptomes
+title: How-to extract rRNA
 ---
-# How-to extract rRNA from assembled (meta-)transcriptomes
+#How-to extract rRNA from assembled (meta-)transcriptomes
 
 I recently had to extract rRNA from a large number of lichen metatranscriptomes. There are multiple ways to approach this but I decided to use RNAmmer. I found the approach RNAmmer takes very attractive because searches for rRNAs based on a database of HMMs of known rRNA genes rather than using a blast best hit approach. [RNAmmer](http://www.cbs.dtu.dk/cgi-bin/sw_request?rnammer) was originally designed to predict rRNA genes in genomes, however the [Trinotate](https://trinotate.github.io) pipeline (for annotating transcriptomes) provides a nice wrapper script to adopt RNAmmer for transcriptomes. We were also interested in the taxonomic composition of the extracted rRNA so it was necessary to get lineage information for the rRNA transcripts.
 Here is how to do all this:
