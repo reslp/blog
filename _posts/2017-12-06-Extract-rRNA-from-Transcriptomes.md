@@ -1,8 +1,8 @@
 ---
 layout: post
-title: How-to extract rRNA from assembled (meta-)transcriptomes
+title: How-to extract rRNA from assembled meta-transcriptomes
 ---
-The title says it all: Here I describe how I extracted rRNA from lichen (meta-)transcriptomes.
+The title says it all: Here I describe how I extracted rRNA from lichen meta-transcriptomes.
 
 # Introduction
 
