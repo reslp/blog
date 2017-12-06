@@ -65,4 +65,8 @@ Finally, I have also created a simple shell script which summarizes all the abov
 
 Hope this is useful for someone ;)
 
+best,
+
+Philipp
+
 
