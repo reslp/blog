@@ -3,7 +3,7 @@ layout: post
 title: Download lineage information for species names and taxids with R
 ---
 
-Short R example how to download the complete taxonomic lineage information for a number of NCBI taxids. 
+Short R example on how to download the complete taxonomic lineage information for a number of NCBI taxids. 
 
 # Introduction
 
