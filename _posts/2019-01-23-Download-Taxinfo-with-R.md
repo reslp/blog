@@ -2,6 +2,9 @@
 layout: post
 title: Download lineage information for species names and taxids with R
 ---
+
+Short R example how to download the complete taxonomic lineage information for a number of NCBI taxids. 
+
 # Introduction
 
 I have always struggled with how I can efficiently get the lineage information for an NCBI taxid. I have downloaded the complete taxonomy files from NCBI and tried to parse it locally. I can tell you this has been painful. Recently I had to retrieve lineage information for many thousands of species names and taxids so I have invested some time into searching for a better solution to this problem. Although there are several R package accessing the NCBI API no single package could give me the desired output. I ended up using three R packages [myTAI](https://cran.r-project.org/package=myTAI) and [taxize](https://cran.r-project.org/web/packages/taxize/index.html). Here is the workflow:
