@@ -23,7 +23,7 @@ library(plyr)
 
 # Download taxon summary
 
-Next we have to download all the taxonomy summary information for each element in a given vector with taxids. This will retrieve a summary dataframe containing the taxon name, its rank and taxonid.
+Next we have to download all the taxonomy summary information for each element of a given vector containing taxids. This will retrieve a summary dataframe containing the taxon name, its rank and taxonid.
 It is only necessary to do this if you start from taxids. If you have species names you can skip this step.
 
 ```
@@ -46,9 +46,9 @@ Sys.sleep(0.5)
 }
 ```
 
-# Combining the output to a single dataframe
+# Combining the output into a single dataframe
 
-Once this is done we can combine the list of dataframes into a single dataframes. Missing values will be filled with `<NA>` automatically, all with the magic of *dplyr*.
+Once this is done we can combine the list of dataframes into a single dataframe. Missing values will be filled with `<NA>` automatically, all with the magic of *dplyr*.
 ```
 combined_df <- do.call(rbind.fill, df_list)
 ```
@@ -96,7 +96,7 @@ For this example the final dataframe `combined_df` looks like this:
 5       Pichiaceae Kregervanrija       Kregervanrija fluxuum
 ```
 
-Here is also my Rsession information:
+Here is also my RSession information:
 
 ```
 > sessionInfo()
