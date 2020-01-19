@@ -1,7 +1,9 @@
 ---
 layout: post
-title: A script to run and combine results of Metagenome binners
+title: Binning Metagenomes using Docker containers
 ---
+
+I wrote a script to run and combine results of multiple metagenome binners using Docker containers to automate and standardize my workflow on different computers.
 
 # Binning metagenomes
 
